@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Bongo Cat Mobile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🐱 BONGO CAT</h1>
+    <p>Tu compañero gamer</p>
+</header>
+
+<main>
+
+    <section id="home" class="screen active">
+
+        <div class="cat-area">
+
+            <div id="cat" class="cat">
+
+                <div class="ears">
+                    <span>▲</span>
+                    <span>▲</span>
+                </div>
+
+                <div class="face">
+                    <div class="eyes">
+                        <span>●</span>
+                        <span>●</span>
+                    </div>
+                    <div class="nose">♥</div>
+                    <div class="mouth">ω</div>
+                    <div class="whiskers">〰</div>
+                </div>
+
+                <div class="paws">
+                    <div id="leftPaw" class="paw">🐾</div>
+                    <div id="rightPaw" class="paw">🐾</div>
+                </div>
+
+            </div>
+
+            <div class="desk">
+                <div class="keyboard">⌨️ TECLADO</div>
+                <div class="mouse">🖱️ MOUSE</div>
+            </div>
+
+        </div>
+
+        <div class="status">
+            <span id="status">Esperando actividad...</span>
+        </div>
+
+        <div class="counter">
+            <div>
+                <strong id="keyCount">0</strong>
+                <small>TECLAS</small>
+            </div>
+
+            <div>
+                <strong id="clickCount">0</strong>
+                <small>CLICS</small>
+            </div>
+        </div>
+
+        <h2>Selecciona tu modo</h2>
+
+        <div class="mode-grid">
+            <button onclick="selectMode('emulator')">
+                🎮 Modo emulador
+                <small>Teclado y mouse</small>
+            </button>
+
+            <button onclick="selectMode('mobile')">
+                📱 Modo celular
+                <small>Controles táctiles</small>
+            </button>
+        </div>
+
+        <button class="secondary" onclick="showScreen('skins')">
+            🎨 Personalizar Bongo Cat
+        </button>
+
+        <button class="secondary" onclick="showScreen('settings')">
+            ⚙️ Configuración
+        </button>
+
+    </section>
+
+    <section id="skins" class="screen">
+
+        <h2>🎨 Skins de Bongo Cat</h2>
+
+        <div class="skin-grid">
+            <button onclick="changeSkin('white')">🤍 Clásico</button>
+            <button onclick="changeSkin('black')">🖤 Negro</button>
+            <button onclick="changeSkin('orange')">🧡 Naranja</button>
+            <button onclick="changeSkin('pink')">💗 Rosa</button>
+            <button onclick="changeSkin('blue')">💙 Azul</button>
+        </div>
+
+        <button class="secondary" onclick="showScreen('home')">
+            ← Volver
+        </button>
+
+    </section>
+
+    <section id="settings" class="screen">
+
+        <h2>⚙️ Configuración</h2>
+
+        <label>
+            Tamaño del gato
+            <input type="range" min="70" max="150"
+                   value="100" oninput="resizeCat(this.value)">
+        </label>
+
+        <label>
+            <input type="checkbox" id="soundToggle" checked>
+            Sonidos
+        </label>
+
+        <button class="secondary" onclick="showScreen('home')">
+            ← Volver
+        </button>
+
+    </section>
+
+    <section id="mobile" class="screen">
+
+        <h2>📱 Modo celular</h2>
+        <p>Prueba las animaciones de los controles.</p>
+
+        <div class="touch-grid">
+            <button onclick="mobileAction('W')">⬆️</button>
+            <button onclick="mobileAction('A')">⬅️</button>
+            <button onclick="mobileAction('S')">⬇️</button>
+            <button onclick="mobileAction('D')">➡️</button>
+        </div>
+
+        <div class="action-grid">
+            <button onclick="mobileAction('FIRE')">🔥 DISPARAR</button>
+            <button onclick="mobileAction('JUMP')">⬆️ SALTAR</button>
+            <button onclick="mobileAction('AIM')">🎯 MIRA</button>
+            <button onclick="mobileAction('CROUCH')">⬇️ AGACHARSE</button>
+            <button onclick="mobileAction('RELOAD')">🔄 RECARGAR</button>
+        </div>
+
+        <button class="secondary" onclick="showScreen('home')">
+            ← Volver
+        </button>
+
+    </section>
+
+    <section id="emulator" class="screen">
+
+        <h2>🎮 Modo emulador</h2>
+        <p>Conecta tu teclado y mouse al celular.</p>
+
+        <p>Presiona WASD, espacio o mueve el mouse.</p>
+
+        <div class="info">
+            <p>⌨️ Teclado: patita izquierda</p>
+            <p>🖱️ Mouse: patita derecha</p>
+        </div>
+
+        <button class="secondary" onclick="showScreen('home')">
+            ← Volver
+        </button>
+
+    </section>
+
+</main>
+
+<footer>
+    BONGO CAT MOBILE • VERSION 1.0
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
